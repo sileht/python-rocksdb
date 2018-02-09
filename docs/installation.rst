@@ -1,7 +1,20 @@
 Installing
-**********
+==========
 .. highlight:: bash
 
+
+With distro package and pypi
+****************************
+
+.. code-block:: bash
+
+    apt-get install python-virtualenv python-dev librocksdb-dev
+    virtualenv venv
+    source venv/bin/activate
+    pip install pythin-rocksdb
+
+From source
+***********
 
 Building rocksdb
 ----------------
@@ -42,13 +55,11 @@ These varialbes are picked up by the compiler, linker and loader
     export LIBRARY_PATH=${LIBRARY_PATH}:`pwd`
 
 Building python-rocksdb
-------------------
+-----------------------
 
 .. code-block:: bash
 
     apt-get install python-virtualenv python-dev
-    virtualenv pyrocks_test
-    cd pyrocks_test
-    . bin/activate
-    pip install "Cython>=0.20"
-    pip install git+git://github.com/twmht/python-rocksdb.git
+    virtualenv venv
+    source venv/bin/activate
+    pip install git+git://github.com/twmht/python-rocksdb.git#egg=python-rocksdb
